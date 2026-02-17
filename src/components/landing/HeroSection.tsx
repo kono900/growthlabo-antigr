@@ -8,11 +8,11 @@ interface HeroSectionProps {
 const HeroSection = ({ onStartQuiz }: HeroSectionProps) => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Dynamic gradient background with animation */}
+      {/* Dynamic animated gradient background */}
       <div
         className="absolute inset-0 animate-gradient"
         style={{
-          background: "linear-gradient(135deg, hsl(0 0% 18%) 0%, hsl(0 0% 9%) 40%, hsl(0 0% 5%) 100%)",
+          background: "linear-gradient(135deg, hsl(0 0% 9%) 0%, hsl(0 0% 5%) 50%, hsl(20 90% 8%) 100%)",
           backgroundSize: "200% 200%",
         }}
       />
@@ -21,7 +21,7 @@ const HeroSection = ({ onStartQuiz }: HeroSectionProps) => {
       <div
         className="absolute inset-0 opacity-40"
         style={{
-          background: "radial-gradient(ellipse at 50% 30%, hsl(20 90% 48% / 0.15) 0%, transparent 60%)",
+          background: "radial-gradient(ellipse at 50% 30%, hsl(20 90% 48% / 0.15), transparent 60%)",
         }}
       />
 
@@ -34,98 +34,119 @@ const HeroSection = ({ onStartQuiz }: HeroSectionProps) => {
       />
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center space-y-12">
-        {/* Animated badge */}
-        <div className="animate-fade-in-down opacity-0 [animation-delay:100ms] inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 backdrop-blur-sm">
-          <Sparkles className="h-4 w-4 text-primary" />
-          <span className="text-sm font-medium" style={{ color: "hsl(0 0% 80%)" }}>
-            Diagnostic stratégique pour PME
+        {/* Badge with animation */}
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full animate-fade-in-up stagger-1"
+          style={{
+            background: "linear-gradient(135deg, hsl(20 90% 48% / 0.15), hsl(30 100% 60% / 0.1))",
+            border: "1px solid hsl(20 90% 48% / 0.3)",
+          }}
+        >
+          <Sparkles className="h-4 w-4 text-primary animate-pulse" />
+          <span className="text-sm font-bold text-primary uppercase tracking-wider">
+            Diagnostic de Solidité Stratégique™
           </span>
         </div>
 
-        {/* Main title with stagger animation */}
-        <h1
-          className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold leading-[1.1] animate-fade-in-up opacity-0 [animation-delay:200ms]"
+        {/* Main headline with stagger animation */}
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold leading-tight animate-fade-in-up stagger-2"
           style={{
             color: "hsl(0 0% 96%)",
-            letterSpacing: "-0.02em"
+            letterSpacing: "-0.02em",
           }}
         >
-          Votre entreprise est-elle réellement{" "}
+          Votre croissance est-elle vraiment{" "}
           <span
-            className="inline-block bg-gradient-to-r from-primary to-amber-500 bg-clip-text text-transparent animate-gradient"
-            style={{ backgroundSize: "200% auto" }}
+            className="inline-block"
+            style={{
+              background: "linear-gradient(135deg, hsl(20 90% 48%), hsl(30 100% 60%))",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+            }}
           >
-            structurée pour la croissance
+            structurée
+          </span>
+          … ou simplement portée par{" "}
+          <span
+            className="inline-block"
+            style={{
+              background: "linear-gradient(135deg, hsl(20 90% 48%), hsl(30 100% 60%))",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+            }}
+          >
+            votre énergie
           </span>{" "}
           ?
         </h1>
 
-        {/* Subheading with animation */}
-        <div className="space-y-5 text-lg md:text-xl animate-fade-in-up opacity-0 [animation-delay:400ms]" style={{ color: "hsl(0 0% 70%)" }}>
-          <p className="leading-relaxed">
-            La plupart des PME en développement pensent avoir besoin de plus de marketing.
-          </p>
-          <p className="font-semibold text-xl md:text-2xl bg-gradient-to-r from-primary via-orange-400 to-amber-500 bg-clip-text text-transparent">
-            En réalité, elles manquent de clarté stratégique.
-          </p>
-        </div>
-
-        {/* Description */}
-        <p
-          className="text-base md:text-lg max-w-2xl mx-auto leading-relaxed animate-fade-in-up opacity-0 [animation-delay:600ms]"
-          style={{ color: "hsl(0 0% 60%)" }}
+        {/* Subtitle */}
+        <p className="text-xl md:text-2xl font-medium animate-fade-in-up stagger-3"
+          style={{ color: "hsl(0 0% 80%)" }}
         >
-          Faites ce diagnostic en <strong className="text-primary font-semibold">5 à 7 minutes</strong> et découvrez si votre entreprise est prête à scaler…
-          ou si sa structure freine encore sa croissance.
+          Test stratégique pour PME de services B2B (10–50 employés)
         </p>
 
-        {/* CTA with premium styling */}
-        <div className="space-y-6 animate-fade-in-up opacity-0 [animation-delay:800ms]">
+        {/* Description */}
+        <p className="text-base md:text-lg leading-relaxed max-w-2xl mx-auto animate-fade-in-up stagger-4"
+          style={{ color: "hsl(0 0% 70%)" }}
+        >
+          En 7 minutes, découvrez si votre entreprise repose sur une{" "}
+          <strong className="text-primary">architecture solide</strong>…
+          ou sur des <strong className="text-primary">fondations fragiles</strong> qui freineront votre croissance.
+        </p>
+
+        {/* CTA Button with premium styling */}
+        <div className="flex flex-col items-center gap-6 animate-fade-in-up stagger-5">
           <Button
-            variant="hero"
-            size="lg"
             onClick={onStartQuiz}
-            className="group relative px-12 py-7 text-lg font-semibold overflow-hidden hover-scale"
+            size="lg"
+            className="group relative px-8 py-6 md:px-12 md:py-7 text-base md:text-lg font-bold rounded-2xl overflow-hidden transition-all duration-300 hover-lift"
             style={{
-              background: "linear-gradient(135deg, hsl(20 90% 48%) 0%, hsl(24 95% 55%) 100%)",
-              boxShadow: "0 4px 30px hsl(20 90% 48% / 0.4), 0 0 60px hsl(20 90% 48% / 0.2)",
-              transition: "all var(--duration-normal) var(--ease-smooth)",
+              background: "linear-gradient(135deg, hsl(20 90% 48%), hsl(24 95% 55%))",
+              boxShadow: "0 10px 40px hsl(20 90% 48% / 0.3)",
             }}
           >
-            <span className="relative z-10">Commencez le diagnostic maintenant</span>
+            <span className="relative z-10 flex items-center gap-3">
+              Je veux connaître le niveau réel de structuration de mon entreprise
+              <ArrowDown className="h-5 w-5 animate-bounce" />
+            </span>
+            {/* Hover glow effect */}
             <div
-              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"
               style={{
-                background: "linear-gradient(135deg, hsl(24 95% 55%) 0%, hsl(28 100% 60%) 100%)",
+                background: "radial-gradient(circle at center, hsl(20 90% 48% / 0.4), transparent 70%)",
               }}
             />
           </Button>
+        </div>
 
-          {/* Social proof with animation */}
-          <div className="flex items-center justify-center gap-3 pt-2">
-            <div className="flex -space-x-2">
-              {[1, 2, 3].map((i) => (
-                <div
-                  key={i}
-                  className="w-8 h-8 rounded-full border-2 border-background"
-                  style={{
-                    background: `linear-gradient(135deg, hsl(${i * 40} 70% 60%), hsl(${i * 40 + 30} 65% 55%))`,
-                  }}
-                />
-              ))}
-            </div>
-            <div className="flex items-center gap-2">
-              <Users className="h-4 w-4" style={{ color: "hsl(0 0% 75%)" }} />
-              <span className="text-sm font-medium" style={{ color: "hsl(0 0% 75%)" }}>
-                Rejoignez <strong className="text-primary">+500 dirigeants</strong> ayant passé le diagnostic
-              </span>
-            </div>
+        {/* Social proof with gradient avatars */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm animate-fade-in-up stagger-6"
+          style={{ color: "hsl(0 0% 65%)" }}
+        >
+          <div className="flex -space-x-2">
+            {[1, 2, 3, 4].map((i) => (
+              <div
+                key={i}
+                className="w-10 h-10 rounded-full border-2 border-background flex items-center justify-center"
+                style={{
+                  background: `linear-gradient(${135 + i * 30}deg, hsl(20 90% ${40 + i * 5}%), hsl(${20 + i * 10} 85% ${50 + i * 3}%))`,
+                }}
+              >
+                <Users className="h-5 w-5 text-white" />
+              </div>
+            ))}
           </div>
+          <p className="font-medium">
+            Déjà <strong className="text-primary font-bold">500+</strong> dirigeants ont évalué leur structure
+          </p>
         </div>
 
         {/* Scroll indicator */}
-        <div className="pt-12 animate-bounce opacity-0 [animation-delay:1000ms]">
-          <ArrowDown className="h-6 w-6 mx-auto" style={{ color: "hsl(0 0% 40%)" }} />
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+          <ArrowDown className="h-6 w-6" style={{ color: "hsl(0 0% 50%)" }} />
         </div>
       </div>
     </section>
