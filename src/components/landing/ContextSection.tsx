@@ -1,12 +1,19 @@
-import { Compass, Puzzle, MessageCircle, UserCog } from "lucide-react";
+import { Target, MessageCircle, Users, Zap, TrendingUp, DollarSign, AlertTriangle, BarChart3 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 const ContextSection = () => {
   const painPoints = [
-    { icon: Compass, text: "Votre positionnement devient difficile à expliquer" },
-    { icon: Puzzle, text: "Vos offres se multiplient sans réelle architecture" },
-    { icon: MessageCircle, text: "Votre communication manque de cohérence" },
-    { icon: UserCog, text: "Les décisions reposent encore trop sur vous" },
+    { icon: Target, text: "Votre offre est devenue difficile à expliquer clairement ?" },
+    { icon: MessageCircle, text: "Vos commerciaux ne présentent pas l'entreprise de la même façon ?" },
+    { icon: Users, text: "Vous acceptez parfois des clients qui ne correspondent pas à votre cœur de valeur ?" },
+    { icon: Zap, text: "Votre croissance dépend encore trop de vous ?" },
+  ];
+
+  const whyNowPoints = [
+    { icon: AlertTriangle, text: "Plus la confusion interne augmente" },
+    { icon: DollarSign, text: "Plus la marge s'érode" },
+    { icon: BarChart3, text: "Plus les décisions deviennent incohérentes" },
+    { icon: TrendingUp, text: "Plus la croissance devient instable" },
   ];
 
   const [visibleCards, setVisibleCards] = useState<Set<number>>(new Set());
@@ -45,13 +52,10 @@ const ContextSection = () => {
       <div className="max-w-4xl mx-auto px-6 space-y-20">
         {/* Header section with enhanced typography */}
         <div className="space-y-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground leading-tight">
-            Votre entreprise fonctionne.
-          </h2>
           <div className="space-y-3 text-xl md:text-2xl text-muted-foreground">
-            <p className="animate-fade-in-up opacity-0 [animation-delay:100ms]">Le chiffre d'affaires progresse.</p>
-            <p className="animate-fade-in-up opacity-0 [animation-delay:200ms]">Les clients sont là.</p>
-            <p className="animate-fade-in-up opacity-0 [animation-delay:300ms]">L'équipe grandit.</p>
+            <p className="animate-fade-in-up opacity-0 [animation-delay:100ms]">Vous avez des clients.</p>
+            <p className="animate-fade-in-up opacity-0 [animation-delay:200ms]">Vous avez une équipe.</p>
+            <p className="animate-fade-in-up opacity-0 [animation-delay:300ms]">Vous êtes en croissance.</p>
           </div>
         </div>
 
@@ -59,7 +63,7 @@ const ContextSection = () => {
         <div className="space-y-2 text-center">
           <div className="flex items-center justify-center gap-4">
             <div className="h-px w-16 bg-gradient-to-r from-transparent to-border" />
-            <p className="text-3xl md:text-4xl font-serif font-bold text-foreground">Mais :</p>
+            <p className="text-3xl md:text-4xl font-serif font-bold text-foreground">Mais…</p>
             <div className="h-px w-16 bg-gradient-to-l from-transparent to-border" />
           </div>
         </div>
@@ -109,23 +113,78 @@ const ContextSection = () => {
           ))}
         </div>
 
-        {/* Bottom insight with enhanced styling */}
+        {/* Key message */}
+        <div className="text-center space-y-4">
+          <p className="text-xl md:text-2xl text-muted-foreground">
+            Si oui, le problème n'est pas votre marketing.
+          </p>
+          <p className="text-2xl md:text-3xl font-serif font-bold text-foreground">
+            Le problème est{" "}
+            <span
+              className="inline-block"
+              style={{
+                background: "linear-gradient(135deg, hsl(20 90% 48%), hsl(30 100% 60%))",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}
+            >
+              structurel
+            </span>
+            .
+          </p>
+        </div>
+
+        {/* Why Now Section */}
+        <div className="space-y-10 pt-8">
+          <h3 className="text-3xl md:text-4xl font-serif font-bold text-center text-foreground">
+            Pourquoi ce diagnostic est crucial maintenant
+          </h3>
+
+          <p className="text-lg md:text-xl text-center text-muted-foreground max-w-2xl mx-auto">
+            Plus une PME grandit sans architecture claire :
+          </p>
+
+          {/* Why now cards - simpler design */}
+          <div className="grid md:grid-cols-2 gap-5">
+            {whyNowPoints.map(({ icon: Icon, text }, i) => (
+              <div
+                key={i}
+                className="flex items-center gap-4 p-6 rounded-xl backdrop-blur-sm"
+                style={{
+                  background: "linear-gradient(135deg, hsl(20 90% 48% / 0.08), transparent)",
+                  border: "1px solid hsl(20 90% 48% / 0.15)",
+                }}
+              >
+                <Icon className="h-5 w-5 text-primary shrink-0" strokeWidth={2} />
+                <p className="text-foreground font-medium text-base md:text-lg">{text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Bottom evaluation box */}
         <div className="space-y-6 text-center pt-12 border-t border-border/30">
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-            La croissance crée de la <strong className="text-foreground font-semibold">complexité</strong>.<br />
-            La complexité crée de la <strong className="text-foreground font-semibold">confusion</strong>.<br />
-            La confusion limite la <strong className="bg-gradient-to-r from-primary to-amber-500 bg-clip-text text-transparent font-semibold">scalabilité</strong>.
+            Ce test vous permet d'évaluer objectivement :
           </p>
-          <div
-            className="inline-block px-8 py-4 rounded-xl backdrop-blur-sm"
-            style={{
-              background: "linear-gradient(135deg, hsl(20 90% 48% / 0.1), hsl(30 100% 60% / 0.05))",
-              border: "1px solid hsl(20 90% 48% / 0.2)",
-            }}
-          >
-            <p className="text-lg md:text-xl font-semibold text-foreground">
-              Ce diagnostic vous permet d'évaluer objectivement votre solidité stratégique.
-            </p>
+          <div className="grid md:grid-cols-3 gap-4 max-w-3xl mx-auto">
+            {[
+              "✔ La clarté de votre positionnement",
+              "✔ La solidité de votre architecture d'offre",
+              "✔ L'alignement stratégique de votre direction"
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="px-6 py-4 rounded-xl backdrop-blur-sm"
+                style={{
+                  background: "linear-gradient(135deg, hsl(20 90% 48% / 0.1), hsl(30 100% 60% / 0.05))",
+                  border: "1px solid hsl(20 90% 48% / 0.2)",
+                }}
+              >
+                <p className="text-base md:text-lg font-semibold text-foreground">{item}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
