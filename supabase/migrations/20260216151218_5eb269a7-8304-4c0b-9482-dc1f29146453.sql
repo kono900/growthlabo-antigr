@@ -1,0 +1,1 @@
+CREATE POLICY "Block all reads" ON public.quiz_leads FOR SELECT USING (false);
