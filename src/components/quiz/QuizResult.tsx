@@ -30,8 +30,8 @@ const QuizResult = ({ score, maxScore, onRestart }: QuizResultProps) => {
 
         {/* Score Display */}
         <div className="space-y-2">
-          <p className="text-6xl md:text-7xl font-bold text-foreground">
-            {score}<span className="text-4xl text-muted-foreground">/{maxScore}</span>
+          <p className="text-5xl md:text-7xl font-bold text-foreground">
+            {score}<span className="text-3xl md:text-4xl text-muted-foreground">/{maxScore}</span>
           </p>
           <p className="text-xl text-muted-foreground">
             Score de solidité stratégique : <strong className="text-foreground">{percentage}%</strong>
@@ -41,7 +41,7 @@ const QuizResult = ({ score, maxScore, onRestart }: QuizResultProps) => {
 
       {/* Interpretation Section */}
       <div
-        className="p-8 md:p-10 rounded-3xl space-y-6"
+        className="p-6 md:p-10 rounded-3xl space-y-6"
         style={{
           background: "linear-gradient(135deg, var(--glass-bg), rgba(255, 255, 255, 0.02))",
           border: "1px solid var(--glass-border)",
@@ -85,7 +85,7 @@ const QuizResult = ({ score, maxScore, onRestart }: QuizResultProps) => {
 
       {/* Risk/Opportunity Section */}
       <div
-        className="p-8 md:p-10 rounded-3xl space-y-6"
+        className="p-6 md:p-10 rounded-3xl space-y-6"
         style={{
           background: result.level === "structuree"
             ? "linear-gradient(135deg, hsl(142 76% 36% / 0.05), hsl(142 76% 36% / 0.02))"
@@ -129,7 +129,7 @@ const QuizResult = ({ score, maxScore, onRestart }: QuizResultProps) => {
 
       {/* Recommendation Section */}
       <div
-        className="p-8 md:p-10 rounded-3xl space-y-6 text-center"
+        className="p-6 md:p-10 rounded-3xl space-y-6 text-center"
         style={{
           background: "linear-gradient(135deg, hsl(20 90% 48% / 0.1), hsl(30 100% 60% / 0.05))",
           border: "2px solid hsl(20 90% 48% / 0.3)",
@@ -146,7 +146,7 @@ const QuizResult = ({ score, maxScore, onRestart }: QuizResultProps) => {
         <div className="space-y-4 pt-4">
           <Button
             size="lg"
-            className="group relative px-10 py-6 md:px-12 md:py-7 text-base md:text-lg font-bold rounded-2xl overflow-hidden transition-all duration-300 hover-lift"
+            className="group relative w-full md:w-auto px-8 py-6 md:px-12 md:py-7 text-base md:text-lg font-bold rounded-2xl overflow-hidden transition-all duration-300 hover-lift"
             style={{
               background: "linear-gradient(135deg, hsl(20 90% 48%), hsl(24 95% 55%))",
               boxShadow: "0 10px 40px hsl(20 90% 48% / 0.3)",
@@ -171,7 +171,7 @@ const QuizResult = ({ score, maxScore, onRestart }: QuizResultProps) => {
 
       {/* Bonus Section - Strategic Brand Architecture */}
       <div
-        className="p-8 md:p-10 rounded-3xl space-y-6 border-t-4"
+        className="p-6 md:p-10 rounded-3xl space-y-6 border-t-4"
         style={{
           background: "linear-gradient(135deg, var(--glass-bg), rgba(255, 255, 255, 0.02))",
           border: "1px solid var(--glass-border)",
