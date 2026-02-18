@@ -14,22 +14,13 @@ const QuizSection = forwardRef<HTMLElement>((_, ref) => {
     <section ref={ref} className="py-32 md:py-44 bg-gradient-to-b from-secondary/20 via-secondary/40 to-secondary/20 relative overflow-hidden">
       {/* Decorative background elements */}
       <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] opacity-[0.03]"
-        style={{
-          background: "radial-gradient(circle, hsl(20 90% 48%) 0%, transparent 70%)",
-          filter: "blur(100px)",
-        }}
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] opacity-[0.03] bg-[radial-gradient(circle,_hsl(20_90%_48%)_0%,_transparent_70%)] blur-[100px]"
       />
 
       <div className="max-w-3xl mx-auto px-6 space-y-16 relative z-10">
         {/* Header */}
         <div className="text-center space-y-8">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full"
-            style={{
-              background: "linear-gradient(135deg, hsl(20 90% 48% / 0.15), hsl(30 100% 60% / 0.1))",
-              border: "1px solid hsl(20 90% 48% / 0.3)",
-            }}
-          >
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-coral/30 bg-gradient-to-br from-coral/15 to-amber/10">
             <span className="text-sm font-bold text-primary uppercase tracking-wider">
               🧪 DIAGNOSTIC DE SOLIDITÉ STRATÉGIQUE™
             </span>
@@ -47,21 +38,13 @@ const QuizSection = forwardRef<HTMLElement>((_, ref) => {
 
           {/* Feature badges */}
           <div className="flex flex-wrap justify-center gap-4 pt-6">
-            {features.map(({ icon: Icon, label }, idx) => (
+            {features.map(({ icon: Icon, label }) => (
               <div
                 key={label}
-                className="flex items-center gap-3 px-5 py-3 rounded-full backdrop-blur-sm hover-scale"
-                style={{
-                  background: "linear-gradient(135deg, var(--glass-bg), rgba(255, 255, 255, 0.05))",
-                  border: "1px solid var(--glass-border)",
-                  boxShadow: "0 4px 15px hsl(0 0% 0% / 0.05)",
-                }}
+                className="flex items-center gap-3 px-5 py-3 rounded-full backdrop-blur-sm hover-scale bg-gradient-glass border border-white/10 dark:border-white/5 shadow-xs"
               >
                 <div
-                  className="flex items-center justify-center w-8 h-8 rounded-full"
-                  style={{
-                    background: "linear-gradient(135deg, hsl(20 90% 48% / 0.15), hsl(30 100% 60% / 0.1))",
-                  }}
+                  className="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-coral/15 to-amber/10"
                 >
                   <Icon className="h-4 w-4 text-primary" strokeWidth={2} />
                 </div>
@@ -75,12 +58,7 @@ const QuizSection = forwardRef<HTMLElement>((_, ref) => {
 
         {/* Quiz container with premium styling */}
         <div
-          className="p-8 md:p-12 rounded-3xl backdrop-blur-sm hover-lift"
-          style={{
-            background: "linear-gradient(135deg, var(--glass-bg), rgba(255, 255, 255, 0.02))",
-            border: "1px solid var(--glass-border)",
-            boxShadow: "var(--shadow-premium)",
-          }}
+          className="p-8 md:p-12 rounded-3xl backdrop-blur-sm hover-lift bg-gradient-glass border border-white/10 dark:border-white/5 shadow-premium"
         >
           <DiagnosticQuiz />
         </div>
