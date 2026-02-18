@@ -196,14 +196,14 @@ const Resultat = () => {
   }
 
   return (
-    <main className="min-h-screen bg-secondary/30 py-16 md:py-24 px-6">
+    <main className="min-h-screen bg-secondary/30 py-10 md:py-24 px-4 md:px-6">
       <div className="max-w-3xl mx-auto space-y-12 animate-in fade-in zoom-in-95 duration-700">
         {/* Header */}
         <div className="text-center space-y-6">
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mx-auto">
             <BarChart3 className="h-8 w-8 text-primary" />
           </div>
-          <h1 className="text-3xl md:text-5xl font-serif font-bold text-foreground">
+          <h1 className="text-2xl md:text-5xl font-serif font-bold text-foreground">
             Avant d'afficher votre score…
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
@@ -216,7 +216,7 @@ const Resultat = () => {
             border: "1px solid hsl(20 90% 48% / 0.2)",
           }}>
             <p className="text-lg font-semibold text-foreground">
-              Vous avez obtenu <span className="text-primary text-2xl font-bold">{percentage}%</span>
+              Votre diagnostic est <span className="text-primary text-xl font-bold">prêt à être consulté</span>
             </p>
           </div>
         </div>
@@ -239,7 +239,7 @@ const Resultat = () => {
 
         {/* Why Reserved Section */}
         <div
-          className="p-8 md:p-10 rounded-3xl space-y-6"
+          className="p-6 md:p-10 rounded-3xl space-y-6"
           style={{
             background: "linear-gradient(135deg, var(--glass-bg), rgba(255, 255, 255, 0.02))",
             border: "1px solid var(--glass-border)",
@@ -277,7 +277,7 @@ const Resultat = () => {
 
         {/* What You Receive Section */}
         <div
-          className="p-8 md:p-10 rounded-3xl space-y-6"
+          className="p-6 md:p-10 rounded-3xl space-y-6"
           style={{
             background: "linear-gradient(135deg, hsl(142 76% 36% / 0.05), hsl(142 76% 36% / 0.02))",
             border: "1px solid hsl(142 76% 36% / 0.2)",
@@ -346,7 +346,7 @@ const Resultat = () => {
           </div>
 
           <div
-            className="p-8 md:p-10 rounded-3xl space-y-6"
+            className="p-6 md:p-10 rounded-3xl space-y-6"
             style={{
               background: "linear-gradient(135deg, var(--glass-bg), rgba(255, 255, 255, 0.02))",
               border: "2px solid var(--glass-border)",
@@ -462,7 +462,7 @@ const Resultat = () => {
               rel="noopener noreferrer"
               className="font-bold text-green-600 hover:underline"
             >
-              WhatsApp au +229 XX XX XX XX
+              WhatsApp au +229 01 61 08 80 01
             </a>{" "}
             pour recevoir votre diagnostic et poser vos questions.
           </p>
